@@ -9,6 +9,16 @@ export default defineConfig({
     port: 5173
   },
   build: {
-    outDir: "dist"
+    outDir: "dist",
+    assetsDir: "",
+    rollupOptions: {
+      input: "main.jsx",
+      output: {
+        entryFileNames: "app.js",
+        chunkFileNames: "chunks/[name]-[hash].js",
+        assetFileNames: (assetInfo) =>
+          assetInfo.name?.endsWith(".css") ? "style.css" : "assets/[name]-[hash][extname]"
+      }
+    }
   }
 });

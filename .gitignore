@@ -5,7 +5,7 @@ node_modules
 .env
 
 # Build output
-dist
+# dist is committed for GitHub Pages branch-based serving
 
 # Test coverage
 coverage

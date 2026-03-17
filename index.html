@@ -7,6 +7,25 @@
   </head>
   <body class="bg-slate-950">
     <div id="root"></div>
-    <script type="module" src="./main.jsx"></script>
+    <script type="module">
+      const isGitHubPages = window.location.hostname.endsWith("github.io");
+
+      if (isGitHubPages) {
+        const css = document.createElement("link");
+        css.rel = "stylesheet";
+        css.href = "./dist/style.css";
+        document.head.appendChild(css);
+
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "./dist/app.js";
+        document.body.appendChild(script);
+      } else {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "./main.jsx";
+        document.body.appendChild(script);
+      }
+    </script>
   </body>
 </html>
