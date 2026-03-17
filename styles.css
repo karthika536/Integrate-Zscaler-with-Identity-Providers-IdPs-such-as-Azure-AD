@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply m-0 min-h-screen bg-slate-950 font-body text-slate-100;
+  background-image: radial-gradient(circle at 12% 20%, rgba(42, 132, 255, 0.18), transparent 35%),
+    radial-gradient(circle at 88% 10%, rgba(14, 63, 136, 0.28), transparent 30%),
+    linear-gradient(145deg, #020617 0%, #0b1228 55%, #111827 100%);
+}
+
+.glass {
+  @apply border border-slate-700/60 bg-slate-900/60 backdrop-blur-xl;
+}
+
+.section-title {
+  @apply font-display text-2xl font-semibold text-white;
+}
+
+.input {
+  @apply w-full rounded-lg border border-slate-700 bg-slate-900/70 px-4 py-2 text-sm text-slate-100 placeholder-slate-400 outline-none transition focus:border-cyber-500;
+}
+
+.btn-primary {
+  @apply rounded-lg bg-cyber-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-cyber-700;
+}
+
+.btn-secondary {
+  @apply rounded-lg border border-slate-600 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-cyber-500 hover:text-cyber-100;
+}

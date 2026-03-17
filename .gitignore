@@ -1,0 +1,22 @@
+# Dependencies
+node_modules
+
+# Environment variables (keep secret)
+.env
+
+# Build output
+dist
+
+# Test coverage
+coverage
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temp files
+github-upload-steps.txt
