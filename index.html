@@ -13,12 +13,12 @@
       if (isGitHubPages) {
         const css = document.createElement("link");
         css.rel = "stylesheet";
-        css.href = "./dist/style.css";
+        css.href = "./style.css";
         document.head.appendChild(css);
 
         const script = document.createElement("script");
         script.type = "module";
-        script.src = "./dist/app.js";
+        script.src = "./app.js";
         document.body.appendChild(script);
       } else {
         const script = document.createElement("script");
