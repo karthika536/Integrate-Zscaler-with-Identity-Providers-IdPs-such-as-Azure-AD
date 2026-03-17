@@ -21,6 +21,7 @@ export const AuthProvider = ({ children }) => {
         setUser(response.data.data);
       } catch (error) {
         localStorage.removeItem("token");
+        localStorage.removeItem("demo_user");
       } finally {
         setLoading(false);
       }
@@ -43,6 +44,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     const response = await loginLocal({ email, password });
     localStorage.setItem("token", response.data.data.token);
+    localStorage.setItem("demo_user", JSON.stringify(response.data.data.user));
     setUser(response.data.data.user);
     toast.success("Login successful");
   };
@@ -50,12 +52,14 @@ export const AuthProvider = ({ children }) => {
   const loginWithProvider = async (email, provider) => {
     const response = await loginSso({ email, provider });
     localStorage.setItem("token", response.data.data.token);
+    localStorage.setItem("demo_user", JSON.stringify(response.data.data.user));
     setUser(response.data.data.user);
     toast.success(`${provider} SSO successful`);
   };
 
   const logout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("demo_user");
     setUser(null);
   };
 
