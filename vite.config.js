@@ -12,7 +12,6 @@ export default defineConfig({
     outDir: "dist",
     assetsDir: "",
     rollupOptions: {
-      input: "main.jsx",
       output: {
         entryFileNames: "app.js",
         chunkFileNames: "chunks/[name]-[hash].js",
