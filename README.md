@@ -72,6 +72,35 @@ npm run dev
 
 Then open **http://localhost:5173** in your browser.
 
+## 🔗 Upload To GitHub
+
+Run these commands in the project root:
+
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+git push -u origin main
+```
+
+## 🌍 Deploy Frontend On GitHub Pages
+
+This repo includes a workflow at `.github/workflows/deploy.yml`.
+
+After pushing to `main`:
+
+1. Open your GitHub repo.
+2. Go to **Settings → Pages**.
+3. Set **Source** to **GitHub Actions**.
+4. Wait for the **Deploy to GitHub Pages** workflow to complete.
+
+Important:
+- GitHub Pages deploys only the React frontend.
+- Your Express backend does not run on GitHub Pages.
+- For full-stack hosting, deploy backend separately (Render, Railway, or similar) and set `VITE_API_BASE_URL` to that backend URL.
+
 ---
 
 ## 📁 Project Structure

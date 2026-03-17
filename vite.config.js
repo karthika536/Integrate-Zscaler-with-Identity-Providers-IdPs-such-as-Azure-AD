@@ -4,7 +4,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   root: ".",
-  base: "/Integrate-Zscaler-with-Identity-Providers-IdPs-such-as-Azure-AD/",
+  base: process.env.VITE_BASE_PATH || "/",
   server: {
     port: 5173
   },
